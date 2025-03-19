@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Efeito de Queda - Jumanji</title>
+    <title>Efeito de Ponto de Fuga - Jumanji</title>
     <style>
         body, html {
             margin: 0;
@@ -28,47 +28,37 @@
 
         const lines = [];
         const lineCount = 100;
-        const speed = 5;
+        const speed = 1.02;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        let scale = 1;
 
         for (let i = 0; i < lineCount; i++) {
-            lines.push({
-                x1: Math.random() * canvas.width,
-                y1: Math.random() * canvas.height,
-                x2: Math.random() * canvas.width,
-                y2: Math.random() * canvas.height,
-                width: Math.random() * 3 + 1
-            });
+            const angle = (Math.PI * 2 * i) / lineCount;
+            const distance = 500;
+            const x = Math.cos(angle) * distance;
+            const y = Math.sin(angle) * distance;
+            lines.push({ x, y });
         }
 
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.scale(scale, scale);
 
             lines.forEach(line => {
                 ctx.beginPath();
-                ctx.moveTo(line.x1, line.y1);
-                ctx.lineTo(line.x2, line.y2);
-                ctx.lineWidth = line.width;
+                ctx.moveTo(0, 0);
+                ctx.lineTo(line.x, line.y);
                 ctx.strokeStyle = 'purple';
+                ctx.lineWidth = 2;
                 ctx.stroke();
-
-                line.x1 += (line.x1 - canvas.width / 2) * speed * 0.01;
-                line.y1 += (line.y1 - canvas.height / 2) * speed * 0.01;
-                line.x2 += (line.x2 - canvas.width / 2) * speed * 0.01;
-                line.y2 += (line.y2 - canvas.height / 2) * speed * 0.01;
-
-                if (
-                    Math.abs(line.x1 - canvas.width / 2) > canvas.width ||
-                    Math.abs(line.y1 - canvas.height / 2) > canvas.height ||
-                    Math.abs(line.x2 - canvas.width / 2) > canvas.width ||
-                    Math.abs(line.y2 - canvas.height / 2) > canvas.height
-                ) {
-                    line.x1 = Math.random() * canvas.width;
-                    line.y1 = Math.random() * canvas.height;
-                    line.x2 = Math.random() * canvas.width;
-                    line.y2 = Math.random() * canvas.height;
-                    line.width = Math.random() * 3 + 1;
-                }
             });
+
+            ctx.restore();
+
+            scale *= speed; // Faz a "câmera" avançar em direção ao ponto central
 
             requestAnimationFrame(draw);
         }
