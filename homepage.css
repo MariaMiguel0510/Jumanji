@@ -1,22 +1,3 @@
-html {
-    overflow: hidden;
-}
-
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-header {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 a {
     position: absolute;
     display: flex; /* Permite que o <a> ocupe toda a área da <div> */
@@ -25,11 +6,6 @@ a {
     text-decoration: none;
 }
 
-.mapaInicial {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 .textoInicial {
     border: solid blue;

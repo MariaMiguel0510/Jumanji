@@ -1,0 +1,28 @@
+.nicknameContainer {
+    position: absolute;
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    border: solid blue;    
+    gap: 10%;
+    justify-content: center;
+}
+
+.nicknameForm{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nicknameInput{
+    text-align: center;
+    height: 50px;
+    padding: 20px;
+}
+
+.nicknameInput:focus {
+    outline: none;
+}

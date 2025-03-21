@@ -1,0 +1,28 @@
+/*html dedicado aos estilos comuns entre as páginas homepage e nickname*/
+
+html {
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*imagem do mapa inicial presente na homepage e na página do nickname*/
+.mapaInicial {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
