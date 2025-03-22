@@ -6,7 +6,7 @@ function setup() {
     camara = createCapture(VIDEO, { flipped: true });
     camara.hide();
 
-    time = 60000; /*1 minuto*/
+    time = 3000; /*1 minuto*/
     setTimeout(muda, time); /*depois de passar um minuto aparece a parte de cair*/
 }
 
@@ -16,5 +16,5 @@ function draw() {
 }
 
 function muda(){
-    window.location.href = "teste.html";
+    window.location.href = "rules.html";//nota é suposto ir para a parte de cair não das regras
 }
