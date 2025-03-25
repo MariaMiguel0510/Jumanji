@@ -6,15 +6,43 @@ a {
     text-decoration: none;
 }
 
+.backgroundInicial{
+    background-color: #b2956d;
+    z-index: -2;
+}
 
-.textoInicial {
-    border: solid blue;
-    display: flex;
-    flex-direction: column;
-    gap: 10%;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    color: blacK; /*cor do texto*/
+.mapaInicial{
+    position: absolute;
+}
+
+#DrtCima{
+    top: 0;
+    right: 0;
+}
+
+#DrtBaixo{
+    bottom: 0;
+    right: 0;
+}
+
+#EsqCima{
+    top: 0;
+    left: 0;
+    
+}
+
+#EsqBaixo{    
+    bottom: 0;
+    left: 0;
+
+}
+
+#CentroCima{
+    top:0;
+    z-index: -1;
+}
+
+#CentroBaixo{
+    bottom:0;
+    z-index: -1;
 }

@@ -1,23 +1,25 @@
+.backgroundSecundario {
+    background-color: #ad8456;
+}
+
 .nicknameContainer {
     position: absolute;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     align-items: center;
-    border: solid blue;    
-    gap: 10%;
     justify-content: center;
 }
 
-.nicknameForm{
+.nicknameForm {
     display: flex;
     width: 25%;
     flex-direction: column;
     gap: 20px;
 }
 
-.nicknameInput{
+.nicknameInput {
     text-align: center;
     height: 50px;
     padding: 20px;

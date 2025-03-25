@@ -18,11 +18,3 @@ header {
     align-items: center;
     justify-content: center;
 }
-
-
-/*imagem do mapa inicial presente na homepage e na página do nickname*/
-.mapaInicial {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
