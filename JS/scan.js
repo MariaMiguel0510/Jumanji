@@ -6,7 +6,7 @@ function setup() {
     camara = createCapture(VIDEO, { flipped: true });
     camara.hide();
 
-    time = 3000; /*1 minuto*/
+    time = 10000; /*1 minuto*/
     setTimeout(muda, time); /*depois de passar um minuto aparece a parte de cair*/
 }
 
