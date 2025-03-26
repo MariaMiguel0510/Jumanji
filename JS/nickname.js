@@ -13,3 +13,4 @@ function saveNicknameOnEnter(event) {
         //alert("Nickname salvo com sucesso!");
     }
 }
+

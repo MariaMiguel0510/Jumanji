@@ -11,7 +11,16 @@
 
 <body>
     <header class="backgroundSecundario">
-        <img class="mapaInicial" src="images/background_regras.png" width="90%" height="auto" alt="fundoInicial">
+        <picture>
+            <!-- Para telas com largura menor que 2000px, carrega a imagem grande -->
+            <source media="(max-width: 1999px)" srcset="images/nickname_S.png" width="90%" height="auto">
+
+            <!-- Para telas com largura maior que 2000px, carrega a imagem grande (nickname_G.png) -->
+            <source media="(min-width: 1999px)" srcset="images/nickname_G.png" width="90%" height="auto">
+        
+            <!-- Imagem fallback, caso nenhuma condição acima seja atendida -->
+            <img src="images/nickname_S.png" alt="Nickname" width="90%" height="auto">
+        </picture>
         <div class="nicknameContainer">
             <form class="nicknameForm">
                 <input type="text" class="nicknameInput" id="nickname">
