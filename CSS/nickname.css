@@ -2,6 +2,12 @@
     background-color: #ad8456;
 }
 
+.nicknameImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .nicknameContainer {
     position: absolute;
     display: flex;
