@@ -4,9 +4,10 @@ let time;
 function setup() {
     createCanvas(innerWidth, innerHeight);
     camara = createCapture(VIDEO, { flipped: true });
+    camara.size(540, 405);
     camara.hide();
 
-    time = 10000; /*1 minuto*/
+    time = 10000; /*1 minuto é 10000*/
     setTimeout(muda, time); /*depois de passar um minuto aparece a parte de cair*/
 }
 
