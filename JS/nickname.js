@@ -1,16 +1,13 @@
-let nickname = document.getElementById("nickname");
-let savedNickname = localStorage.getItem("nickname");
+let nickname = document.getElementById("nicknameForm");
+let savedNickname = localStorage.getItem("nicknameForm");
 
-nickname.addEventListener("keydown", saveNicknameOnEnter);
+nickname.addEventListener("submit", saveNicknameOnSubmit);
 
-// Salva o nickname quando o usuário pressiona Enter
-function saveNicknameOnEnter(event) {
-    if (event.key === "Enter") {  // Verifica se a tecla pressionada é o Enter
-        event.preventDefault();
-        let name = nickname.value;
-        localStorage.setItem("nickname", name);  // Salva o nickname no localStorage
-        window.location.href = "scan.html"; //quando carrego no enter e é submetido ent vai para a página do scan
-        //alert("Nickname salvo com sucesso!");
-    }
+// Salva o nickname quando o usuário clica no botão de submit
+function saveNicknameOnSubmit(event) {
+    event.preventDefault();  // Impede o envio do formulário
+    let name = nickname.value;
+    localStorage.setItem("nickname", name);  // Salva o nickname no localStorage
+    window.location.href = "scan.html"; // Redireciona para a página scan.html
 }
 

@@ -2,7 +2,10 @@
     background-color: #ad8456;
 }
 
-.nicknameImg{
+.imgNickname {
+    position: relative;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,19 +21,45 @@
     justify-content: center;
 }
 
-.nicknameForm {
+form {
+    position: relative;
     display: flex;
-    width: 25%;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    height: 20%;
     flex-direction: column;
-    gap: 20px;
 }
 
-.nicknameInput {
+form>input {
+    background: url('/images/input.png') no-repeat left center;
+    background-size: 100%;
+    border: none;
+    font-size: 20pt;
     text-align: center;
-    height: 50px;
-    padding: 20px;
+    color: #ad8456;
+    width: 100%;
+    height: 100%;
 }
 
-.nicknameInput:focus {
+form>input:focus {
     outline: none;
+}
+
+form>button {
+    cursor: pointer;
+    position: absolute;
+    width: 50%;
+    height: 40px;
+    margin-top: 65%;
+    background: none;
+    border: none;
+}
+
+form>button>img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-self: center;
 }
