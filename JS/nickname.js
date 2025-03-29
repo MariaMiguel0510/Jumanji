@@ -1,12 +1,24 @@
-let nickname = document.getElementById("nicknameForm");
-let savedNickname = document.getElementById("nickname");
+let nicknameForm = document.getElementById("nicknameForm");
+let nicknameInput = document.getElementById("nickname");
 
-nickname.addEventListener("submit", saveNicknameOnSubmit);
+// Verifica se já existe um nickname salvo no localStorage
+let savedNickname = localStorage.getItem("nickname");
 
-// Guarda o nickname quando o botão submit é carregado
+// Se já houver um nickname salvo, podemos colocar esse como valor no campo input
+if (savedNickname) {
+    nicknameInput.value = savedNickname;
+} else {
+    // Caso contrário, o campo ficará vazio
+    nicknameInput.value = '';
+}
+
+
+nicknameForm.addEventListener("submit", saveNicknameOnSubmit);
+
+// Salva o nickname quando o usuário clica no botão de submit
 function saveNicknameOnSubmit(event) {
-    event.preventDefault();  //impede que o formulário seja logo enviado
-    let name = savedNickname.value;
-    localStorage.setItem("nickname", name);  // guarda o nickname no localStorage
-    window.location.href = "scan.html"; // redireciona para a página scan.html
+    event.preventDefault();  // Impede o envio do formulário
+    let name = nicknameInput.value; // Obtém o valor do nickname submetido
+    localStorage.setItem("nickname", name);  // Salva o nickname no localStorage
+    window.location.href = "scan.html"; // Redireciona para a página scan.html
 }
