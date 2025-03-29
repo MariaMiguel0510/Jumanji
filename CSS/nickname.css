@@ -11,7 +11,16 @@
     align-items: center;
 }
 
-.nicknameContainer {
+.backgroundSecundario>h1{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    z-index: 2;
+    margin-bottom: 17%;
+    font-size: 3vw;
+}
+
+.nicknameContainer, .rulesContainer {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -32,6 +41,7 @@ form {
 }
 
 form>input {
+    /*coloca a imagem dentro do input*/
     background: url('/images/input.png') no-repeat left center;
     background-size: 100%;
     border: none;
@@ -62,4 +72,13 @@ form>button>img {
     display: flex;
     align-items: center;
     justify-self: center;
+}
+
+/* CSS dedica apenas à parte das rules */
+.rulesContainer{
+    width: 50%;
+}
+
+.rules{
+    font-size: 2.3vw;
 }

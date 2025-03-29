@@ -1,5 +1,11 @@
 /*html dedicado aos estilos comuns entre as páginas homepage e nickname*/
 
+/*importação da fonte*/
+@font-face {
+    font-family: 'Junglelaw';
+    src: url('/font/Junglelaw-ZVpLZ.woff') format('woff'); 
+}
+
 html {
     overflow: hidden;
 }
@@ -17,4 +23,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.texto {
+    color: #721a0c;    
+    display: none;
+    font-family: Junglelaw;
+    text-align: center;
+    letter-spacing: 0.2vw;
 }

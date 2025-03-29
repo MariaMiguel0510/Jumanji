@@ -10,10 +10,18 @@
 </head>
 
 <body>
-    <header>
-        <img class="mapaInicial" src="images/mapa.jpg" alt="fundoInicial">
-        <div class="nicknameContainer">
-            <h2>Welcome to Jumanji Dr.<span id="nicknameDisplay"></span></h2>
+    <header class="backgroundSecundario">
+        <picture class="imgNickname">
+            <!--se a largura da tela for menor ou igual a 1500px, desenha a imagem pequena-->
+            <source media="(max-width: 1280)" width="90%" height="auto" srcset="images/nickname_S.png">
+            <source media="(min-width: 1280px)" width="90%" height="auto" srcset="images/nickname_G.png">
+            <img class="imagem" src="images/nickname_S.png" width="90%" height="auto">
+        </picture>
+
+        <div class="rulesContainer">
+            <h2 class="rules texto">Welcome to Jumanji Dr.<span id="nicknameDisplay"></span></h2>
+            <h2 class="rules texto">Bl bla bla bla bla</h2>
+            <h2 class="rules texto">The future of Jumanji is in your hands, goodluck</h2>
         </div>
     </header>
     <script src="/JS/rules.js"></script>

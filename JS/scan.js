@@ -17,5 +17,5 @@ function draw() {
 }
 
 function muda(){
-    window.location.href = "rules.html";//nota é suposto ir para a parte de cair não das regras
+    window.location.href = "rules.html";//é suposto ir para a parte de cair não das regras
 }
