@@ -13,8 +13,8 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-    width: 50%;
-    aspect-ratio: 4 / 3; /* Mantém proporção da câmara */
+    aspect-ratio: 4 / 3;
+    /* Mantém proporção da câmara */
 }
 
 .imgScan>img {
@@ -23,5 +23,19 @@
 }
 
 .imgScan img:last-of-type {
-    z-index: 3; /* a moldura por cima de tudo */
+    z-index: 3;
+    /* a moldura por cima de tudo */
+}
+
+/*--se a largura da tela for menor ou igual a 1500px, desenha a imagem pequena--*/
+@media only screen and (max-width: 1280px) {
+    #canvasCamara {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    #canvasCamara {
+        width: 55%;
+    }
 }
