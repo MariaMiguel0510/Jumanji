@@ -1,0 +1,24 @@
+.imgScan {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvasCamara {
+    position: absolute;
+    width: 540px;
+    height: 405px;
+    z-index: 2;
+}
+
+.imgScan>img {
+    position: absolute;
+    z-index: 1;
+}
+
+.imgScan img:last-of-type {
+    z-index: 3; /* a moldura por cima de tudo */
+}
