@@ -9,8 +9,11 @@
 
 #canvasCamara {
     position: absolute;
-    width: 540px;
-    height: 405px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47%;
+    aspect-ratio: 4 / 3;
     z-index: 2;
 }
 

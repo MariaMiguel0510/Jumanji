@@ -2,10 +2,13 @@ let camara;
 let time;
 
 function setup() {
-    let canvas = createCanvas(540, 405);
-    canvas.parent('canvasCamara'); // adiciona o canvas dentro da div
+    const container = document.getElementById('canvasCamara');
+    const w = container.offsetWidth;
+    const h = container.offsetHeight;
+
+    let canvas = createCanvas(w, h);
+    canvas.parent('canvasCamara');// adiciona o canvas dentro da div
     camara = createCapture(VIDEO, { flipped: true });
-    camara.size(540, 405);
     camara.hide();
 
     time = 100000; /*1 minuto é 10000*/
