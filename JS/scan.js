@@ -17,7 +17,7 @@ function setup() {
     camara.size(w, h);
     camara.hide();
 
-    time = 100000;
+    time = 7000;
     setTimeout(muda, time);
 }
 
