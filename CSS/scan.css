@@ -40,17 +40,17 @@
     justify-content: center;
     align-items: center;
     z-index: 5;
+    height: 50%;
 }
 
 .scanner>div {
+    display: none;
     position: absolute;
     height: 7px;
     border-radius: 5px;
     background-color: rgb(0, 119, 255);
     box-shadow: 0px 0px 50px 15px rgb(0, 119, 255);
     top: 50%;
-
-
     animation-name: scan;
     animation-duration: 8s;
     animation-timing-function: linear;
@@ -83,10 +83,6 @@
         width: 45%;
     }
 
-    .scanner{
-        height: 50%;
-    }
-
     .scanner>div {
         width: 80%;
     }
@@ -98,10 +94,6 @@
     .imgScan img:last-of-type,
     .scanner {
         width: 55%;
-    }
-
-    .scanner{
-        height: 50%;
     }
 
     .scanner>div {
