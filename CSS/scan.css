@@ -100,6 +100,10 @@
         width: 55%;
     }
 
+    .scanner{
+        height: 50%;
+    }
+
     .scanner>div {
         width: 85%;
     }
