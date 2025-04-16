@@ -1,6 +1,6 @@
 let camara;
 let time;
-let cameraActive = false; // Variável para armazenar o estado da câmera
+let cameraActive = false;
 
 function setup() {
     const container = document.getElementById('canvasCamara');
@@ -8,35 +8,32 @@ function setup() {
     const h = container.offsetHeight;
 
     let canvas = createCanvas(w, h);
-    canvas.parent('canvasCamara'); // adiciona o canvas dentro da div
-    camara = createCapture(VIDEO, function(stream) {
-        // Quando a captura da câmera for bem-sucedida
-        cameraActive = true;
+    canvas.parent('canvasCamara');
+
+    camara = createCapture(VIDEO, () => {
+        cameraActive = true; // quando a câmera estiver pronta
     });
+
     camara.size(w, h);
     camara.hide();
 
-    time = 100000; /*1 minuto é 10000*/
-    setTimeout(muda, time); /*depois de passar um minuto aparece a parte de cair*/
+    time = 100000;
+    setTimeout(muda, time);
 }
 
 function draw() {
-    // Se a câmera estiver ativa, desenha a imagem
-    if (cameraActive) {
-        image(camara, width / 2 - camara.width / 2, height / 2 - camara.height / 2);
-    }
-
     let scannerBar = document.querySelector('.scanner > div');
 
     if (cameraActive) {
-        // Se a câmera estiver ligada, exibe a barra azul
+        push(); // guarda o estado atual
+        translate(width, 0); // move a origem para a direita
+        scale(-1, 1); // espelha horizontalmente (efeito espelho)
+        image(camara, 0, 0, width, height);
+        pop(); // restaura o estado anterior
         scannerBar.style.display = "block";
-    } else {
-        // Caso contrário, esconde a barra azul
-        scannerBar.style.display = "none";
     }
 }
 
 function muda() {
-    window.location.href = "rules.html"; // é suposto ir para a parte de cair não das regras
+    window.location.href = "rules.html";
 }
