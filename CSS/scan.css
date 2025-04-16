@@ -1,3 +1,11 @@
+.scanContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .imgScan {
     height: 100%;
     width: 100%;
@@ -8,7 +16,6 @@
 }
 
 #canvasCamara {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,15 +34,73 @@
     /* a moldura por cima de tudo */
 }
 
+.scanner {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.scanner>div {
+    position: absolute;
+    height: 7px;
+    border-radius: 5px;
+    background-color: rgb(0, 119, 255);
+    box-shadow: 0px 0px 50px 15px rgb(0, 119, 255);
+    top: 50%;
+
+
+    animation-name: scan;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scan {
+    0% {
+        box-shadow: 0px 0px 50px 15px rgba(0, 119, 255);
+        top: 50%;
+    }
+
+    25% {
+        box-shadow: 0px 6px 50px 15px rgba(0, 119, 255);
+        top: 5px;
+    }
+
+    75% {
+        box-shadow: 0px -6px 50px 15px rgba(0, 119, 255);
+        top: 98%;
+    }
+}
+
 /*--se a largura da tela for menor ou igual a 1500px, desenha a imagem pequena--*/
 @media only screen and (max-width: 1280px) {
-    #canvasCamara {
+
+    #canvasCamara,
+    .imgScan img:last-of-type,
+    .scanner {
         width: 45%;
+    }
+
+    .scanner{
+        height: 50%;
+    }
+
+    .scanner>div {
+        width: 80%;
     }
 }
 
 @media only screen and (min-width: 1280px) {
-    #canvasCamara {
+
+    #canvasCamara,
+    .imgScan img:last-of-type,
+    .scanner {
         width: 55%;
+    }
+
+    .scanner>div {
+        width: 85%;
     }
 }
