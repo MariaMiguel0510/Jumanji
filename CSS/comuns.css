@@ -25,10 +25,13 @@ header {
     justify-content: center;
 }
 
+.fonte{
+    font-family: Junglelaw;
+}
+
 .texto {
     color: #721a0c;    
     display: none;
-    font-family: Junglelaw;
     text-align: center;
     letter-spacing: 0.2vw;
 }
