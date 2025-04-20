@@ -11,38 +11,41 @@ a {
     z-index: -2;
 }
 
-.mapaInicial{
+.contentor {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.mapa {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
 }
 
-#DrtCima{
-    top: 0;
-    right: 0;
+#esq,
+#drt {
+    background-size: auto 100%;
+    z-index: 1;
 }
 
-#DrtBaixo{
-    bottom: 0;
-    right: 0;
-}
-
-#EsqCima{
-    top: 0;
+#esq {
     left: 0;
-    
+    background-image: url("/images/folhasEsq.svg");
+    background-position: left top;
 }
 
-#EsqBaixo{    
-    bottom: 0;
-    left: 0;
-
+#drt {
+    right: 0;
+    background-image: url("/images/folhasDrt.svg");
+    background-position: right top;
 }
 
-#CentroCima{
-    top:0;
-    z-index: -1;
-}
-
-#CentroBaixo{
-    bottom:0;
-    z-index: -1;
+.titulo {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    z-index: 3;
 }
