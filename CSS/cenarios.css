@@ -1,0 +1,128 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerNivel {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#containerN1 {
+    background-color: white;
+}
+
+#containerN2 {
+    background-color: #344b00;
+}
+
+#containerN3 {
+    background-color: #c7d6cc;
+}
+
+#containerN4 {}
+
+.fundo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+/*fundo dos cenários dos níveis*/
+.background,
+#layer3N1,
+#layer4N1 {
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.background {
+    z-index: 1;
+}
+
+#backgroundN1 {
+    background-image: url("/images/fundoN1.svg");
+}
+
+#backgroundN2 {
+    background-image: url("/images/fundoN2.svg");
+}
+
+#backgroundN3 {
+    background-image: url("/images/fundoN3.svg");
+}
+
+#backgroundN4 {
+    background-image: url("/images/fundoN4.svg");
+}
+
+
+
+
+/*imagens do canto inferior esquerdo que se movem na responsividade e não ficam tapadas*/
+.leftMove {
+    background-position: left bottom;
+    left: 0;
+    background-size: auto 100%;
+}
+
+/*arvore esquerda nivel 1 */
+#layer2N1 {
+    background-image: url("/images/layer2N1.svg");
+    z-index: 3;
+}
+
+/*folhas canto inferior esquerdo nivel 2 */
+#layer2N2 {
+    background-image: url("/images/layer2N2.svg");
+    z-index: 5;
+}
+
+#layer2N3{
+    background-image: url("/images/layer2N3.svg");
+    background-position: right bottom;
+    right: 0;
+    background-size: auto 100%;
+    z-index: 2;
+}
+
+/*árvore esquerda*/
+#layer3N1 {
+    background-image: url("/images/layer3N1.svg");
+    z-index: 2;
+}
+
+/*folhas canto inferior esquerdo*/
+#layer3N3 {
+    background-image: url("/images/layer3N3.svg");
+    z-index: 3;
+}
+
+/*folhas esquerda e árvore direita*/
+#layer4N1 {
+    background-image: url("/images/layer4N1.svg");
+    z-index: 4;
+}
+
+/*folhas canto inferior esquerdo nivel 1 */
+#layer5N1 {
+    background-image: url("/images/layer5N1.svg");
+    z-index: 5;
+}
+
