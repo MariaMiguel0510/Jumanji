@@ -50,24 +50,24 @@
 
 /*arvore esquerda nivel 1 */
 #layer2N1 {
-    background-image: url("/images/layer2N1.svg");
+    background-image: url("../images/layer2N1.svg");
     z-index: 3;
 }
 
 /*folhas canto inferior esquerdo nivel 2 */
 #layer2N2 {
-    background-image: url("/images/layer2N2.svg");
+    background-image: url("../images/layer2N2.svg");
     z-index: 5;
 }
 
 #layer2N4 {
-    background-image: url("/images/layer2N4.svg");
+    background-image: url("../images/layer2N4.svg");
     z-index: 3;
     pointer-events: none;
 }
 
 #layer2N3 {
-    background-image: url("/images/layer2N3.svg");
+    background-image: url("../images/layer2N3.svg");
     background-position: right bottom;
     right: 0;
     background-size: auto 100%;
@@ -76,24 +76,24 @@
 
 /*árvore esquerda*/
 #layer3N1 {
-    background-image: url("/images/layer3N1.svg");
+    background-image: url("../images/layer3N1.svg");
     z-index: 2;
 }
 
 /*folhas canto inferior esquerdo*/
 #layer3N3 {
-    background-image: url("/images/layer3N3.svg");
+    background-image: url("../images/layer3N3.svg");
     z-index: 3;
 }
 
 /*folhas esquerda e árvore direita*/
 #layer4N1 {
-    background-image: url("/images/layer4N1.svg");
+    background-image: url("../images/layer4N1.svg");
     z-index: 4;
 }
 
 /*folhas canto inferior esquerdo nivel 1 */
 #layer5N1 {
-    background-image: url("/images/layer5N1.svg");
+    background-image: url("../images/layer5N1.svg");
     z-index: 5;
 }
