@@ -15,11 +15,15 @@
 }
 
 .painel>p{
-    font-family: 'Poppins';
+    font-size: 2.2vw;
+    font-weight: 400;    
+    font-family: Junglelaw;
+    line-height: 25px;
     width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
     align-items: center;
     text-align: center;
+    color: #562b0a;
 }

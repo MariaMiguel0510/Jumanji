@@ -8,5 +8,5 @@ function saveNicknameOnSubmit(event) {
     event.preventDefault();  //impede que o formulário seja logo enviado
     let name = savedNickname.value;
     localStorage.setItem("nickname", name);  // guarda o nickname no localStorage
-    window.location.href = "rules.html"; // redireciona para a página scan.html
+    window.location.href = "rules.html"; // redireciona para a página rules.html
 }
