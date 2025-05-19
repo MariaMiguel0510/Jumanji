@@ -19,7 +19,7 @@ if (SpeechRecognition) {
 
                 //e compara para ver se é o mesmo
                 if (transcript.includes('jumanji')) {
-                    window.location.href = 'homepage.html'; //remete para a hompeage/página inicial
+                    window.location.href = 'index.html'; //remete para a hompeage/página inicial
                 }
             }
         }
