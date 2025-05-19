@@ -38,7 +38,7 @@ form {
 
 form>input {
     /*coloca a imagem dentro do input*/
-    background: url('/images/input.png') no-repeat left center;
+    background: url('images/input.png') no-repeat left center;
     background-size: 100%;
     border: none;
     font-size: 20pt;
