@@ -114,7 +114,7 @@
     position: relative;
     width: 25%;
     aspect-ratio: 1 / 1;
-    background-image: url('/images/balaoFala.png');
+    background-image: url('../images/balaoFala.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
