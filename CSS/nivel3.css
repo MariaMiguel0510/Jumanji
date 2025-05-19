@@ -1,0 +1,63 @@
+canvas {
+  z-index: 7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+#label-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 15;
+}
+
+#instruction-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  color: white;
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+  z-index: 15;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation class */
+.animate {
+  animation: zoomFade 0.6s ease-in-out;
+}
+
+/* Keyframes fix */
+@keyframes zoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+#feedback-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: limegreen;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 15;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}

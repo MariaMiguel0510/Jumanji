@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="/CSS/cenarios.css" />
+    <link rel="stylesheet" type="text/css" href="/CSS/explicacaoNiveis.css" />
+    <link rel="stylesheet" type="text/css" href="/CSS/comuns.css" />
+    <link rel="stylesheet" type="text/css" href="/CSS/nivel2.css" />
+    <title>Jumanji</title>
+</head>
+
+<body>
+    <main>
+        <div class="containerNivel" id="containerN2">
+            <img class="fundo background" id="backgroundN2" src="/images/fundoN2.svg"
+                alt="backgroundNivel2"><!--background-->
+            <div class="fundo leftMove" id="layer2N2"></div><!--folhas canto infeior esquerdo-->
+        </div>
+
+        <div class="canyon">
+            <span data-letter="C">C</span>
+            <span data-letter="A">A</span>
+            <span data-letter="N">N</span>
+            <span data-letter="Y">Y</span>
+            <span data-letter="O">O</span>
+            <span data-letter="N">N</span>
+        </div>
+
+        <div class="vidro regras">
+            <div class="instrucoes">
+                <img class="personagem" src="/images/curvyGenius.png">
+                <div class="speech">
+
+                    <p class="texto">I'm Professor Shelly. The jewel was stolen and we need to get it back!</p>
+                    <p class="texto">Use your mouse to pick the letters and discover the jewel's location!</p>
+                    <p class="texto">Be careful! If you make more than 3 mistakes, you’ll lose a life.</p>
+
+                    <div class="dot-container">
+                        <a class="dot" id="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="dot" id="next" onclick="plusSlides(1)">❯</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="vidro" id="animacao">
+            <img class="titulo" src="/images/level2.png" alt="level2">
+        </div>
+
+        <!--se vencer o jogo-->
+        <div class="vidro" id="venceu">
+            <img class="titulo" src="/images/level2Completed.png" alt="gameOver">
+            <div class="instrucoes">
+                <img class="personagem" src="/images/curvyGenius.png">
+                <div class="speech">
+                    <p>Good job! All the bikers<br> have been killed!</p>
+                </div>
+            </div>
+            <div class="btns">
+                <img src="/images/next.png" onclick="window.location.href='nivel3.html'" alt="Next">
+            </div>
+        </div>
+
+        <!--se perder o jogo-->
+        <div class="vidro" id="perdeu">
+            <img class="titulo" src="/images/gameOver.png" alt="gameOver">
+            <div class="instrucoes">
+                <img class="personagem" src="/images/curvyGenius.png">
+                <div class="speech">
+                    <p>Careful! You lost another life!</p>
+                </div>
+            </div>
+            <div class="btns">
+                <img src="/images/tryAgain.png" onclick="resetGame()" alt="Try Again">
+                <img src="/images/quit.png" onclick="window.location.href='homepage.html'" alt="Quit">
+            </div>
+        </div>
+
+        <!--se perder todas as vidas-->
+        <div class="vidro" id="beginning">
+            <img class="titulo" src="/images/gameOver.png" alt="gameOver">
+        </div>
+    </main>
+
+    <footer>
+        <div class="footerContainer">
+            <div class="vidas">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="attemps">
+                <span>Attempts: </span><span id="attemptsCount">3</span>
+            </div>
+        </div>
+    </footer>
+
+    </main>
+    <script src="/JS/explicacaoNiveis.js"></script>
+    <script src="/JS/nivel2.js"></script>
+</body>
+
+</html>

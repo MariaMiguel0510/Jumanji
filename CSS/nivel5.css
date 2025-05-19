@@ -1,0 +1,25 @@
+.painel {
+    width: 65vmin; /* 90% do menor lado da tela */
+    height: 65vmin;
+    background-color: #c1a081;
+    border: 20px solid #562b0a;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 14%;
+    z-index: 2;
+    opacity: 1;
+}
+
+.painel>p{
+    font-family: 'Poppins';
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}

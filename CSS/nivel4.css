@@ -1,0 +1,38 @@
+.painel {
+    width: 65vmin; /* 90% do menor lado da tela */
+    height: 65vmin;
+    background-color: #c1a081;
+    border: 20px solid #562b0a;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 14%;
+    z-index: 2;
+    opacity: 0;
+}
+
+.painel.fadeIn{
+    opacity: 1;
+    animation: fadeIn 1s ease forwards;
+}
+
+.painel > img {
+    width: calc(100% / 5);
+    height: calc(100% / 5);
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.fade-out-board img {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+
+.fade-out-lives div {
+    opacity: 0;
+    transition: opacity 1s ease;
+}

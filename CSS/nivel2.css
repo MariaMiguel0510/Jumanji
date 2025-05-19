@@ -1,0 +1,33 @@
+.letter {
+    position: absolute;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.8s ease;
+    z-index: 5;
+}
+
+.canyon{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    z-index: 15;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 3vw;
+    bottom: 7%;
+    background-color: rgba(52, 75, 0, 0.14);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+}
+
+span{
+    color: rgba(52, 75, 0, 0.2);
+}
+
+.attemps span {
+    color: white;
+}
