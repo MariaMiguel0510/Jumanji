@@ -6,7 +6,7 @@ let lives = parseInt(sessionStorage.getItem('vidasRestantes')) || 3;
 let attempts = 3; // número de tentativas
 let vidasElements = document.querySelectorAll('.vidas div'); // divs representando as vidas
 
-const URL = "../mymodel/";
+const URL = "mymodel/";
 let model, webcam, ctx;
 let labelContainer, instructionContainer, feedbackContainer;
 let maxPredictions;
