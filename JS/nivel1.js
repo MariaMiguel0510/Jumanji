@@ -24,8 +24,8 @@ let canShoot = false;
 
 // carrega imagens
 function preload() {
-    bumerangueImg = loadImage(".../images/boomerang.png");
-    motaImg = loadImage(".../images/mota.png");
+    bumerangueImg = loadImage("images/boomerang.png");
+    motaImg = loadImage("images/mota.png");
 }
 
 function setup() {
