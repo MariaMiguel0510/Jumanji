@@ -12,7 +12,7 @@ let labelContainer, instructionContainer, feedbackContainer;
 let maxPredictions;
 
 const targetPoses = ["Pose 1", "Pose 2", "Pose 3", "Pose 4"];
-const poseInstructions = ["Down", "Left", "Right", "Two hands Up"];
+const poseInstructions = ["Down", "Lean Left", "Lean Right", "Two hands Up"];
 
 let currentTargetPoseIndex;
 let poseAttemptStartTime;
