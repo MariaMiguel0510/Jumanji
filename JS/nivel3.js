@@ -19,7 +19,7 @@ let poseAttemptStartTime;
 let poseFeedbackGiven = false;
 
 let moveCounter = 0;
-let totalMoves = 20;
+let totalMoves = 12;
 let currentSpeed = 3000; // Initial 3s per move
 
 updateLivesDisplay();
@@ -83,9 +83,9 @@ function startGame() {
 }
 
 function adjustSpeed() {
-    if (moveCounter >= 15) currentSpeed = 1500;
-    else if (moveCounter >= 10) currentSpeed = 2200;
-    else if (moveCounter >= 5) currentSpeed = 2800;
+    if (moveCounter >= 9) currentSpeed = 1500;
+    else if (moveCounter >= 6) currentSpeed = 2200;
+    else if (moveCounter >= 3) currentSpeed = 2800;
     else currentSpeed = 3500;
 }
 
