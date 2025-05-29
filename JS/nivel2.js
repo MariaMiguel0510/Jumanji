@@ -49,7 +49,8 @@ function clicaLetra(event) {
     if (letterElement.clicked === true) return;
     letterElement.clicked = true;
 
-    letterElement.style.color = 'black';
+    letterElement.style.color = '#b8dd85';
+    letterElement.style.textShadow = '0px 0px 10px rgba(203, 237, 155, 0.8)';
 
     if (letterElement.dataset.isWordLetter === 'true') {
         let canyonLetters = document.querySelectorAll('.canyon span');
@@ -147,41 +148,41 @@ function initGame() {
 }
 
 function clearLetters() {
-  // 1) Remove só os spans de classe .letter (letras espalhadas no cenário)
-  gameArea.querySelectorAll('span.letter').forEach(letter => letter.remove());
+    // 1) Remove só os spans de classe .letter (letras espalhadas no cenário)
+    gameArea.querySelectorAll('span.letter').forEach(letter => letter.remove());
 
-  // 2) Coloca TODOS os spans do "canyon" no estado original
-  let canyonContainer = document.querySelector('.canyon');
-  if (canyonContainer) {
-    canyonContainer.querySelectorAll('span').forEach(span => {
-      // apaga qualquer estilo inline aplicado durante o jogo
-      span.removeAttribute('style');
-    });
-  }
+    // 2) Coloca TODOS os spans do "canyon" no estado original
+    let canyonContainer = document.querySelector('.canyon');
+    if (canyonContainer) {
+        canyonContainer.querySelectorAll('span').forEach(span => {
+            // apaga qualquer estilo inline aplicado durante o jogo
+            span.removeAttribute('style');
+        });
+    }
 }
 
 function resetGame() {
-  // limpa só as letras sobre o cenário e reseta o canyon
-  clearLetters();
+    // limpa só as letras sobre o cenário e reseta o canyon
+    clearLetters();
 
-  // reseta variáveis de jogo, exceto vidas
-  attempts = 3;
-  foundPositions.fill(false);
+    // reseta variáveis de jogo, exceto vidas
+    attempts = 3;
+    foundPositions.fill(false);
 
-  // recarrega vidas do sessionStorage
-  lives = parseInt(sessionStorage.getItem('vidasRestantes')) || 3;
+    // recarrega vidas do sessionStorage
+    lives = parseInt(sessionStorage.getItem('vidasRestantes')) || 3;
 
-  // atualiza UI
-  updateLivesDisplay();
-  updateAttemptsDisplay();
+    // atualiza UI
+    updateLivesDisplay();
+    updateAttemptsDisplay();
 
-  // esconde mensagens
-  winnerPhrase.classList.remove('mostrar');
-  loserPhrase.classList.remove('mostrar');
-  beginning.classList.remove('mostrar');
+    // esconde mensagens
+    winnerPhrase.classList.remove('mostrar');
+    loserPhrase.classList.remove('mostrar');
+    beginning.classList.remove('mostrar');
 
-  // gera novamente as letras (tanto as da palavra quanto as aleatórias)
-  initGame();
+    // gera novamente as letras (tanto as da palavra quanto as aleatórias)
+    initGame();
 }
 
 
