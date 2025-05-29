@@ -16,7 +16,7 @@ let tempCanvas = document.createElement('canvas');
 let ctx = tempCanvas.getContext('2d');
 
 // array de letras aleatórias (todas as letras do alfabeto, incluindo caracteres especiais)
-let randomLetters = ['G', 'M', 'W', 'Q', 'R', 'Z', 'I', 'V', 'T', 'U', 'Ç', 'E', 'D', 'X'];
+let randomLetters = ['G', 'M', 'W', 'Q', 'Z', 'V', 'U', 'Ç', 'D'];
 
 updateLivesDisplay();
 updateAttemptsDisplay();  // Atualiza o display logo no início
@@ -68,7 +68,6 @@ function clicaLetra(event) {
                 if (foundPositions.every(Boolean)) {
                     winnerPhrase.classList.add('mostrar'); // Mostra a mensagem de vitória
                 }
-
                 break;
             }
         }
@@ -151,15 +150,12 @@ function clearLetters() {
   // 1) Remove só os spans de classe .letter (letras espalhadas no cenário)
   gameArea.querySelectorAll('span.letter').forEach(letter => letter.remove());
 
-  // 2) Reseta TODOS os spans do "canyon" ao estado original
+  // 2) Coloca TODOS os spans do "canyon" no estado original
   let canyonContainer = document.querySelector('.canyon');
   if (canyonContainer) {
     canyonContainer.querySelectorAll('span').forEach(span => {
       // apaga qualquer estilo inline aplicado durante o jogo
       span.removeAttribute('style');
-      // opcional: se no CSS inicial eles têm opacity 0, 
-      // você pode forçar aqui:
-      // span.style.opacity = '0';
     });
   }
 }

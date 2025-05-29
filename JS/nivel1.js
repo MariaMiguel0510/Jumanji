@@ -5,7 +5,7 @@ let bumerangueAudio = document.getElementById('bumerangue');
 let timer = document.getElementById('timer');
 
 let motas = [];
-const maxMotas = 40;
+const maxMotas = 30;
 let motasRestantes = maxMotas;
 
 //se houver valor guardado, usa-o; senão começa com 3 vidas
@@ -175,13 +175,13 @@ function finalizaJogo(vitoria) {
 function criarNovaMota() {
     let novaX, novaY, valido = false;
     for (let t = 0; t < 500; t++) {
-        novaX = random(0, width - 200);
-        novaY = random(0, height - 250);
+        novaX = random(0, width - 100);
+        novaY = random(0, height - 170);
 
-        valido = !motas.some(m => m.ativa && abs(novaX - m.x) < 205 && abs(novaY - m.y) < 255);
+        valido = !motas.some(m => m.ativa && abs(novaX - m.x) < 105 && abs(novaY - m.y) < 175);
         if (valido) break;
     }
-    return new Mota(motaImg, novaX, novaY, 200, 250);
+    return new Mota(motaImg, novaX, novaY, 100, 170);
 }
 
 function matarMota() {
@@ -250,64 +250,6 @@ function startTimer() {
     }, 1000);
 }
 
-class Mota {
-    constructor(imagem, posx, posy, largura, altura) {
-        this.img = imagem;
-        this.x = posx;
-        this.y = posy;
-        this.larg = largura;
-        this.alt = altura;
-        this.escala = 0.1;
-        this.escalaMax = 5;
-        this.ativa = true;
-        this.lastChangeFrame = 0;
-    }
-
-    desenhaMota() {
-        if (!this.ativa) return;
-
-        noStroke();
-        push();
-        translate(this.x + this.larg / 2, this.y + this.alt / 2);
-        scale(this.escala);
-        imageMode(CENTER);
-        image(this.img, 0, 0, this.larg, this.alt);
-        pop();
-    }
-
-    trocaPos() {
-        if ((frameCount - this.lastChangeFrame) >= 60) {
-            let novaX, novaY, valido = false;
-
-            for (let t = 0; t < 500; t++) {
-                novaX = random(0, width - this.larg);
-                novaY = random(0, height - this.alt);
-                valido = !motas.some(other => other !== this && other.ativa && abs(novaX - other.x) < this.larg + 5 && abs(novaY - other.y) < this.alt + 5);
-                if (valido) break;
-            }
-
-            if (valido) {
-                this.x = novaX;
-                this.y = novaY;
-            }
-            this.lastChangeFrame = frameCount;
-        }
-
-        if (this.escala < this.escalaMax) {
-            this.escala += 0.003;
-        }
-    }
-
-    colide(xc, yc) {
-        return (xc > this.x && xc < this.x + this.larg && yc > this.y && yc < this.y + this.alt);
-    }
-
-    elimina() {
-        this.ativa = false;
-    }
-}
-
-
 function resetGame() {
   // 1) Para qualquer timer pendente e limpa flags
   clearInterval(countdown);
@@ -346,4 +288,76 @@ function resetGame() {
 
   // 7) Inicia de novo o timer e permite atirar
   startTimer();
+}
+
+class Mota {
+    constructor(imagem, posx, posy, largura, altura) {
+        this.img = imagem;
+        this.x = posx;
+        this.y = posy;
+        this.larg = largura;
+        this.alt = altura;
+        this.escala = 0.1;
+        this.escalaMax = 3;
+        this.ativa = true;
+        this.lastChangeFrame = 0;
+    }
+
+    desenhaMota() {
+        if (!this.ativa) return;
+
+        noStroke();
+        push();
+        // CORREÇÃO: leva em conta o centro com a escala
+        translate(this.x + (this.larg * this.escala) / 2, this.y + (this.alt * this.escala) / 2);
+        scale(this.escala);
+        imageMode(CENTER);
+        image(this.img, 0, 0, this.larg, this.alt);
+        pop();
+    }
+
+    trocaPos() {
+        if ((frameCount - this.lastChangeFrame) >= 60) {
+            let novaX, novaY, valido = false;
+            const larguraEscalada = this.larg * this.escala;
+            const alturaEscalada = this.alt * this.escala;
+
+            for (let t = 0; t < 500; t++) {
+                novaX = random(0, width - larguraEscalada);
+                novaY = random(0, height - alturaEscalada);
+                valido = !motas.some(other =>
+                    other !== this &&
+                    other.ativa &&
+                    abs(novaX - other.x) < larguraEscalada + 5 &&
+                    abs(novaY - other.y) < alturaEscalada + 5
+                );
+                if (valido) break;
+            }
+
+            if (valido) {
+                this.x = novaX;
+                this.y = novaY;
+            }
+            this.lastChangeFrame = frameCount;
+        }
+
+        if (this.escala < this.escalaMax) {
+            this.escala += 0.003;
+        }
+    }
+
+    colide(xc, yc) {
+        const larguraEscalada = this.larg * this.escala;
+        const alturaEscalada = this.alt * this.escala;
+        return (
+            xc > this.x &&
+            xc < this.x + larguraEscalada &&
+            yc > this.y &&
+            yc < this.y + alturaEscalada
+        );
+    }
+
+    elimina() {
+        this.ativa = false;
+    }
 }
