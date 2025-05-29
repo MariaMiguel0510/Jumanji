@@ -74,11 +74,14 @@ footer {
 
 .vidas {
     position: relative;
-    width: 100px;
+    width: 10%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 5px;
     height: 30%;
+   
 }
 
 .vidas>div {
@@ -89,7 +92,7 @@ footer {
     background-repeat: no-repeat;
     visibility: visible;
     transition: visibility 0s 2s;
-    /* Delay para garantir a visibilidade */
+    box-shadow: 0 0 40px 20px rgba(160, 182, 105, 0.3);
 }
 
 /* Adiciona a animação de fade-out gradual (da direita para a esquerda) */
