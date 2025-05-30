@@ -74,19 +74,17 @@ footer {
 
 .vidas {
     position: relative;
-    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 5px;
-    height: 30%;
-   
+    gap: 4px;
+
 }
 
 .vidas>div {
-    width: 100%;
-    height: 17px;
+    width: 60px;
+    height: 15px;
     background-image: url('../images/vida.png');
     background-size: contain;
     background-repeat: no-repeat;

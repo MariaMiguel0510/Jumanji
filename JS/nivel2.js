@@ -16,7 +16,7 @@ let tempCanvas = document.createElement('canvas');
 let ctx = tempCanvas.getContext('2d');
 
 // array de letras aleatórias (todas as letras do alfabeto, incluindo caracteres especiais)
-let randomLetters = ['G', 'M', 'W', 'Q', 'Z', 'V', 'U', 'Ç', 'D'];
+let randomLetters = ['G', 'M', 'W', 'Q', 'Z', 'V', 'U', 'J', 'D'];
 
 updateLivesDisplay();
 updateAttemptsDisplay();  // Atualiza o display logo no início
