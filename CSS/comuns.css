@@ -135,5 +135,68 @@ button, .btns{
 }
 
 
+
+.contentor {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.mapa {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.esq,
+.drt {
+    background-size: auto 100%;
+    z-index: 1;
+}
+
+.esq {
+    left: 0;
+    background-image: url("/images/folhasEsq.svg");
+    background-position: left top;
+}
+
+.drt {
+    right: 0;
+    background-image: url("/images/folhasDrt.svg");
+    background-position: right top;
+}
+
+
+.warning{
+    visibility: hidden; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #B89367;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1143; 
+}
+
+.warning h3 {
+    font-size : 2em;
+    z-index: 1152;
+    height:100%;
+    text-align: center;
+    padding-top:25%;
+    color:#721a0c;
+    font-family: 'Junglelaw';
+    src: url('/font/Junglelaw-ZVpLZ.woff') format('woff'); 
+}
 @media (min-width: 100px) and (max-width: 860px) {
+    .warning {
+        
+        visibility: visible;
+    }
+    
 }
