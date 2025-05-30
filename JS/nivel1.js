@@ -250,46 +250,6 @@ function startTimer() {
     }, 1000);
 }
 
-function resetGame() {
-  // 1) Para qualquer timer pendente e limpa flags
-  clearInterval(countdown);
-  jogoTerminado = false;
-  jogoIniciado   = false;
-  shoot          = false;
-  returning      = false;
-  dx = dy = bumerangueAng = 0;
-  sizeFactor     = 1;
-  canShoot       = false;
-
-  // 2) Reinicia o boomerangue (posição, som, escala...)
-  reiniciaBumerangue();
-
-  // 3) Limpa e recria as motas
-  motas = [];
-  for (let i = 0; i < 3; i++) {
-    motas.push(criarNovaMota());
-  }
-  motasRestantes = maxMotas;
-  atualizarContadorMotas();
-
-  // 4) Reseta as vidas ao valor inicial (aqui usamos 3, ajuste se quiser)
-  lives = 3;
-  sessionStorage.setItem('vidasRestantes', lives);
-  updateLivesDisplay();
-
-  // 5) Remove eventuais mensagens de vitória/derrota
-  winnerPhrase.classList.remove('mostrar');
-  loserPhrase.classList.remove('mostrar');
-  beginning.classList.remove('mostrar');
-
-  // 6) Restaura cursor e mostra timer
-  document.body.style.cursor = 'none';
-  timer.style.display = 'block';
-
-  // 7) Inicia de novo o timer e permite atirar
-  startTimer();
-}
-
 class Mota {
     constructor(imagem, posx, posy, largura, altura) {
         this.img = imagem;
@@ -308,8 +268,7 @@ class Mota {
 
         noStroke();
         push();
-        // CORREÇÃO: leva em conta o centro com a escala
-        translate(this.x + (this.larg * this.escala) / 2, this.y + (this.alt * this.escala) / 2);
+        translate(this.x + this.larg / 2, this.y + this.alt / 2);
         scale(this.escala);
         imageMode(CENTER);
         image(this.img, 0, 0, this.larg, this.alt);
@@ -319,18 +278,11 @@ class Mota {
     trocaPos() {
         if ((frameCount - this.lastChangeFrame) >= 60) {
             let novaX, novaY, valido = false;
-            const larguraEscalada = this.larg * this.escala;
-            const alturaEscalada = this.alt * this.escala;
 
             for (let t = 0; t < 500; t++) {
-                novaX = random(0, width - larguraEscalada);
-                novaY = random(0, height - alturaEscalada);
-                valido = !motas.some(other =>
-                    other !== this &&
-                    other.ativa &&
-                    abs(novaX - other.x) < larguraEscalada + 5 &&
-                    abs(novaY - other.y) < alturaEscalada + 5
-                );
+                novaX = random(0, width - this.larg);
+                novaY = random(0, height - this.alt);
+                valido = !motas.some(other => other !== this && other.ativa && abs(novaX - other.x) < this.larg + 5 && abs(novaY - other.y) < this.alt + 5);
                 if (valido) break;
             }
 
@@ -347,17 +299,51 @@ class Mota {
     }
 
     colide(xc, yc) {
-        const larguraEscalada = this.larg * this.escala;
-        const alturaEscalada = this.alt * this.escala;
-        return (
-            xc > this.x &&
-            xc < this.x + larguraEscalada &&
-            yc > this.y &&
-            yc < this.y + alturaEscalada
-        );
+        return (xc > this.x && xc < this.x + this.larg && yc > this.y && yc < this.y + this.alt);
     }
 
     elimina() {
         this.ativa = false;
     }
+}
+
+
+function resetGame() {
+    // 1) Para qualquer timer pendente e limpa flags
+    clearInterval(countdown);
+    jogoTerminado = false;
+    jogoIniciado = false;
+    shoot = false;
+    returning = false;
+    dx = dy = bumerangueAng = 0;
+    sizeFactor = 1;
+    canShoot = false;
+
+    // 2) Reinicia o boomerangue (posição, som, escala...)
+    reiniciaBumerangue();
+
+    // 3) Limpa e recria as motas
+    motas = [];
+    for (let i = 0; i < 3; i++) {
+        motas.push(criarNovaMota());
+    }
+    motasRestantes = maxMotas;
+    atualizarContadorMotas();
+
+    // 4) Reseta as vidas ao valor inicial (aqui usamos 3, ajuste se quiser)
+    lives = 3;
+    sessionStorage.setItem('vidasRestantes', lives);
+    updateLivesDisplay();
+
+    // 5) Remove eventuais mensagens de vitória/derrota
+    winnerPhrase.classList.remove('mostrar');
+    loserPhrase.classList.remove('mostrar');
+    beginning.classList.remove('mostrar');
+
+    // 6) Restaura cursor e mostra timer
+    document.body.style.cursor = 'none';
+    timer.style.display = 'block';
+
+    // 7) Inicia de novo o timer e permite atirar
+    startTimer();
 }

@@ -1,0 +1,71 @@
+.fullscreen-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1000;
+}
+
+.conteudo{
+    display: none;
+}
+
+.rules {
+    font-family: Junglelaw;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    color: #2c4f07;
+    font-size: 4vw;
+    background-color: rgba(160, 182, 105, 0.8);    text-align: center;
+}
+
+.rules>p{
+    margin: 0;
+}
+
+.rules>img{
+    width: 55%;
+}
+
+.fade-out {
+    animation: fadeOut 1.5s forwards;
+}
+
+
+/* Animação para fade-out */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    70% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}

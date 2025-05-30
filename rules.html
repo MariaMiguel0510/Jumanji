@@ -5,15 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jumanji</title>
-    <link rel="stylesheet" href="CSS/comuns.css">
-    <link rel="stylesheet" href="CSS/nickname.css">
+    <link rel="stylesheet" type="text/css" href="CSS/cenarios.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/rules.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/comuns.css" />
 </head>
 
 <body>
-    <!-- VIDEO DE ABERTURA -->
-    <video id="introVideo" autoplay muted playsinline class="fullscreen-video" preload="auto">
-        <source src="images/queda.mp4" type="video/mp4">
-    </video>
+    <main>
+        <!-- VIDEO DE ABERTURA -->
+        <video id="introVideo" autoplay muted playsinline class="fullscreen-video" preload="auto">
+            <source src="images/queda.mp4" type="video/mp4">
+        </video>
+
+        <div class="conteudo">
+            <div class="containerNivel" id="containerN1">
+                <img class="fundo background" id="backgroundN1" src="images/fundoN1.svg" alt="backgroundNivel1">
+                <div class="fundo leftMove" id="layer2N1"></div>
+                <div class="fundo" id="layer3N1"></div>
+            </div>
+
+            <div class="rules">
+                <p>Welcome to Jumanji Dr.<span id="displayNickname"></span>!</p>
+                <img src="images/rules.png">
+                <div class="btns">
+                    <img src="images/next.png" onclick="window.location.href='nivel1.html'" alt="Next">
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="JS/rules.js"></script>
 </body>
