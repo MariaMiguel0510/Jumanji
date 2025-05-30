@@ -347,3 +347,4 @@ function resetGame() {
     // 7) Inicia de novo o timer e permite atirar
     startTimer();
 }
+

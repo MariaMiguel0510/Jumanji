@@ -28,3 +28,4 @@ const display = document.getElementById("nicknameDisplay");
 if (display) {
     display.textContent = nickname ? " " + nickname : "";
 }
+

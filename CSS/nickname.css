@@ -70,3 +70,26 @@ form>button>img {
     justify-self: center;
 }
 
+.som {
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    top: 5%;
+    right: 3%;
+}
+
+.som>img {
+    position: absolute;
+    width: 50px;
+    height: auto;
+}
+
+#desligado {
+    display: block;
+}
+
+#ligado {
+    display: none;
+}
