@@ -11,30 +11,29 @@
 </head>
 
 <body>
+    <audio id="tambores" autoplay>
+        <source src="audio/tambores.mp3" type="audio/mpeg">
+    </audio>
+    <div class="som">
+        <img id="desligado" src="images/somSemOuvir.png" alt="somDesligado">
+        <img id="ligado" src="images/somOuvir.png" alt="somLigado">
+    </div>
+
     <a href="nickname.html">
         <header class="backgroundInicial">
             <div class="contentor">
                 <img class="mapa" src="images/homepage.svg">
-                <img class="mapa" class="folhas" src="images/folhas.svg">
-                <div class="mapa" class="esq"></div>
-                <div class="mapa" class="drt"></div>
-            </div>            
+                <img class="mapa" id="folhas" src="images/folhas.svg">
+                <div class="mapa" id="esq"></div>
+                <div class="mapa" id="drt"></div>
+            </div>
+
             <img class="titulo" src="images/titulo.png">
-            
         </header>
     </a>
 
-    <div class="warning">
-        <div class="contentor">
-            
-            <img class="mapa" class="folhas" src="images/folhas.svg">
-            <div class="mapa" class="esq"></div>
-            <div class="mapa" class="drt"></div>
-            <h3 > This game does not work on smaller screens. 
-                <br>Please, open it on a bigger device or increase the screen size</h3>
-        </div>            
-        
-        
-    </div>
+    <script src="JS/index.js"></script>
 </body>
+</body>
+
 </html>

@@ -6,13 +6,20 @@ window.onload = function () {
 };
 
 const video = document.getElementById("introVideo");
+const audio = document.getElementById("quedaSom");
 let conteudo = document.querySelector('.conteudo');
 
-// Quando o vídeo termina, aplica a animação de fade-out
+// Quando o vídeo começa, inicia o som
+video.addEventListener("play", () => {
+    audio.play();
+});
+
+// Quando o vídeo termina, aplica a animação de fade-out e mostra o conteúdo
 video.addEventListener("ended", () => {
     video.classList.add("fade-out");
     conteudo.style.display = "flex";
 });
+
 
 // Exibe o nickname salvo, se existir
 const nickname = localStorage.getItem("nickname");
