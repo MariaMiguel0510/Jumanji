@@ -5,7 +5,7 @@ let bumerangueAudio = document.getElementById('bumerangue');
 let timer = document.getElementById('timer');
 
 let motas = [];
-const maxMotas = 30;
+const maxMotas = 25;
 let motasRestantes = maxMotas;
 
 //se houver valor guardado, usa-o; senão começa com 3 vidas

@@ -135,3 +135,7 @@ button, .btns{
 .backgroundColor {
     background-color: #b2834f;
 }
+
+
+@media (min-width: 100px) and (max-width: 860px) {
+}
