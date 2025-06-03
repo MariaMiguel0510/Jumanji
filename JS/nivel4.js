@@ -61,9 +61,9 @@ function inicio() {
 
             // coloca a joia na primeira linha, numa coluna aleatória
             if (l === 0 && c === joiaColuna) {
-                quadro.src = "/images/joia.png";
+                quadro.src = "images/joia.png";
             } else {
-                quadro.src = "/images/" + randomAnimal() + ".png";
+                quadro.src = "images/" + randomAnimal() + ".png";
             }
 
             quadro.addEventListener("dragstart", dragStart);
@@ -167,9 +167,9 @@ function tresAnimais() {
             let animal2 = board[l][c + 1];
             let animal3 = board[l][c + 2];
             if (animal1.src == animal2.src && animal2.src == animal3.src && !animal3.src.includes("blank")) {
-                animal1.src = "/images/blank.png";
-                animal2.src = "/images/blank.png";
-                animal3.src = "/images/blank.png";
+                animal1.src = "images/blank.png";
+                animal2.src = "images/blank.png";
+                animal3.src = "images/blank.png";
             }
         }
     }
@@ -180,9 +180,9 @@ function tresAnimais() {
             let animal2 = board[l + 1][c];
             let animal3 = board[l + 2][c];
             if (animal1.src == animal2.src && animal2.src == animal3.src && !animal1.src.includes("blank")) {
-                animal1.src = "/images/blank.png";
-                animal2.src = "/images/blank.png";
-                animal3.src = "/images/blank.png";
+                animal1.src = "images/blank.png";
+                animal2.src = "images/blank.png";
+                animal3.src = "images/blank.png";
             }
         }
     }
@@ -225,7 +225,7 @@ function desce() {
         }
 
         for (let l = index; l >= 0; l--) {
-            board[l][c].src = "/images/blank.png";
+            board[l][c].src = "images/blank.png";
         }
     }
 
@@ -235,7 +235,7 @@ function desce() {
 function geraNovos() {
     for (let c = 0; c < colunas; c++) {
         if (board[0][c].src.includes("blank")) {
-            board[0][c].src = "/images/" + randomAnimal() + ".png"; // só animais normais
+            board[0][c].src = "images/" + randomAnimal() + ".png"; // só animais normais
         }
     }
 
